@@ -14,7 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
+    'description' => env('APP_DESCRIPTION', ''),
+    'logo' => env('APP_URL').env('APP_LOGO'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -80,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +107,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +176,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*

@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\District;
+use App\Models\Province;
+use App\Models\Regency;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(LevelSeeder::class);
+        \App\Models\User::factory()->make(['username' => 'admin'])->save();
+        $this->call(IndoRegionSeeder::class);
+        $this->call(WorkingAreaSeeder::class);
+        $this->call(OpdWorkUnitSeeder::class);
+        $this->call(YearSeeder::class);
     }
 }

@@ -15,3 +15,11 @@ export default function Button({ type = 'submit', className = '', processing, ch
         </button>
     );
 }
+
+export const SmallButton = ({ btnType = 'primary', size = 'md', children, ...props }) => {
+    return (
+        <button className={`btn btn-falcon-${btnType} btn-${size} me-1 mb-1`} type="button" {...props}>
+            {children}
+        </button>
+    );
+};
